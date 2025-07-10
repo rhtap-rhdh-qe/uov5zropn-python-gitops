@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: uov5zropn-python-gitops
+  description: This is GitOps manifest for uov5zropn-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=uov5zropn-python
+    backstage.io/kubernetes-id: uov5zropn-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: uov5zropn-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:uov5zropn-python
